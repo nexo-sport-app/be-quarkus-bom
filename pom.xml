@@ -25,7 +25,7 @@
         <!-- QUARKUS PROPERTIES -->
         <quarkus.platform.artifact-id>quarkus-bom</quarkus.platform.artifact-id>
         <quarkus.platform.group-id>io.quarkus.platform</quarkus.platform.group-id>
-        <quarkus.platform.version>3.37.0</quarkus.platform.version>
+        <quarkus.platform.version>3.37.4</quarkus.platform.version>
 
         <!-- MISC libraries -->
         <org.mapstruct.version>1.6.3</org.mapstruct.version>
@@ -36,6 +36,11 @@
         <commons-text.version>1.15.0</commons-text.version>
         <opencsv.version>5.12.0</opencsv.version>
         <lombok.version>1.18.46</lombok.version>
+
+        <!-- NEXO libraries -->
+        <archunit.version>1.5.1</archunit.version>
+        <nexo.common.version>0.0.1-SNAPSHOT</nexo.common.version>
+        <nexo.messaging.version>0.0.1-SNAPSHOT</nexo.messaging.version>
     </properties>
 
     <dependencyManagement>
@@ -82,15 +87,32 @@
             </dependency>
 
             <dependency>
-                <groupId>net.ttddyy</groupId>
-                <artifactId>datasource-proxy</artifactId>
-                <version>${datasource-proxy.version}</version>
-            </dependency>
-
-            <dependency>
                 <groupId>org.mapstruct</groupId>
                 <artifactId>mapstruct</artifactId>
                 <version>${org.mapstruct.version}</version>
+            </dependency>
+
+            <!-- NEXO libraries -->
+            <dependency>
+                <groupId>com.tngtech.archunit</groupId>
+                <artifactId>archunit-junit5</artifactId>
+                <version>${archunit.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>it.nexoapp</groupId>
+                <artifactId>common</artifactId>
+                <version>${nexo.common.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>it.nexoapp</groupId>
+                <artifactId>common</artifactId>
+                <version>${nexo.common.version}</version>
+                <type>test-jar</type>
+            </dependency>
+            <dependency>
+                <groupId>it.nexoapp</groupId>
+                <artifactId>messaging</artifactId>
+                <version>${nexo.messaging.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
